@@ -118,9 +118,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    #'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'social.apps.django_app.default',
     'Home',
 )
 
@@ -154,3 +155,97 @@ LOGGING = {
         },
     }
 }
+
+
+
+
+#SOCIAL APP
+
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.open_id.OpenIdAuth',
+    'social.backends.google.GoogleOpenId',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.google.GoogleOAuth',
+    'social.backends.google.GooglePlusAuth',
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.yahoo.YahooOpenId',
+    'social.backends.stripe.StripeOAuth2',
+    'social.backends.persona.PersonaAuth',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.facebook.FacebookAppOAuth2',
+    'social.backends.yahoo.YahooOAuth',
+    'social.backends.angel.AngelOAuth2',
+    'social.backends.behance.BehanceOAuth2',
+    'social.backends.bitbucket.BitbucketOAuth',
+    'social.backends.box.BoxOAuth2',
+    'social.backends.linkedin.LinkedinOAuth',
+    'social.backends.linkedin.LinkedinOAuth2',
+    'social.backends.github.GithubOAuth2',
+    'social.backends.foursquare.FoursquareOAuth2',
+    'social.backends.instagram.InstagramOAuth2',
+    'social.backends.live.LiveOAuth2',
+    'social.backends.vk.VKOAuth2',
+    'social.backends.dailymotion.DailymotionOAuth2',
+    'social.backends.disqus.DisqusOAuth2',
+    'social.backends.dropbox.DropboxOAuth',
+    'social.backends.evernote.EvernoteSandboxOAuth',
+    'social.backends.fitbit.FitbitOAuth',
+    'social.backends.flickr.FlickrOAuth',
+    'social.backends.livejournal.LiveJournalOpenId',
+    'social.backends.soundcloud.SoundcloudOAuth2',
+    'social.backends.thisismyjam.ThisIsMyJamOAuth1',
+    'social.backends.stocktwits.StocktwitsOAuth2',
+    'social.backends.tripit.TripItOAuth',
+    'social.backends.twilio.TwilioAuth',
+    'social.backends.xing.XingOAuth',
+    'social.backends.yandex.YandexOAuth2',
+    'social.backends.douban.DoubanOAuth2',
+    'social.backends.mixcloud.MixcloudOAuth2',
+    'social.backends.rdio.RdioOAuth1',
+    'social.backends.rdio.RdioOAuth2',
+    'social.backends.yammer.YammerOAuth2',
+    'social.backends.stackoverflow.StackoverflowOAuth2',
+    'social.backends.readability.ReadabilityOAuth',
+    'social.backends.skyrock.SkyrockOAuth',
+    'social.backends.tumblr.TumblrOAuth',
+    'social.backends.reddit.RedditOAuth2',
+    'social.backends.steam.SteamOpenId',
+    'social.backends.podio.PodioOAuth2',
+    'social.backends.amazon.AmazonOAuth2',
+    'social.backends.runkeeper.RunKeeperOAuth2',
+    'social.backends.email.EmailAuth',
+    'social.backends.username.UsernameAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/done/'
+URL_PATH = ''
+SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
+SOCIAL_AUTH_STORAGE = 'social.apps.django_app.default.models.DjangoStorage'
+SOCIAL_AUTH_GOOGLE_OAUTH_SCOPE = [
+    'https://www.googleapis.com/auth/drive',
+    'https://www.googleapis.com/auth/userinfo.profile'
+]
+# SOCIAL_AUTH_EMAIL_FORM_URL = '/signup-email'
+SOCIAL_AUTH_EMAIL_FORM_HTML = 'email_signup.html'
+SOCIAL_AUTH_EMAIL_VALIDATION_FUNCTION = 'Login.mail.send_validation' #SOCIAL AUTH
+SOCIAL_AUTH_EMAIL_VALIDATION_URL = '/email-sent/'
+# SOCIAL_AUTH_USERNAME_FORM_URL = '/signup-username'
+SOCIAL_AUTH_USERNAME_FORM_HTML = 'username_signup.html'
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    #SOCIAL AUTH
+    'Login.pipeline.require_email',
+    'social.pipeline.mail.mail_validation',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details'
+)
