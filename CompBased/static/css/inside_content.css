@@ -1,0 +1,164 @@
+
+/* RIGHT SIDE TOOL BOX */
+#right_main
+{
+    width: 15%;
+    right: 1%;
+    padding: 1em;
+    display:inline-block;
+    /*border: black solid 1px;*/
+    border-radius: 3px;
+    position: fixed;
+    right: 5%;
+}
+.main_with_right_menu
+{
+    margin-top: 20px;
+
+    width:100%;
+    /*border: black solid 1px;*/
+}
+/*------Vertical navigation menu bar from bestlodge.blogspot.com---------*/
+#nav-right
+{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#nav-right li
+{
+    margin:0;
+    padding:0;
+}
+#nav-right li a:link, #nav-right li a:visited
+{
+    display:block;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    width:180px;
+    text-transform:capitalize;
+    text-decoration:none;
+    font-weight:bold;
+    padding:6px 6px 6px 40px;
+    color:#111111;
+    background:#EBEBEE;
+    border-bottom:1px dotted white;
+}
+#nav-right li a:hover
+{
+    border:1px solid rgba(81,81,84,0.58);
+    -khtml-border-top-left-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    -moz-box-shadow:0px 0pz 3px 0px #EFEEF4;
+    -webkit-box-shadow:0px 0px 3px 0px #EFEEF4;
+    box-shadow:0px 0px 3px 0px #EFEEF4;
+    color:#48A2AE;
+    background:#AFAFB8;
+    -moz-transition:all .3s cubic-bezier 0.05s;
+    -webkit-transition:all .3s cubic-bezier 0.05s;
+    -o-transition:all .3s cubic-bezier 0.05s;
+    transition:all .3s cubic-bezier 0.05s;
+}
+
+#nav-right li a:active
+{
+    color:#4848AE;
+    background:#AEAEB0;
+    text-decoration:none;
+    -moz-transition:all .2s linear;
+    -webkit-transition:all .2s linear;
+    -o-transition:all .2s linear;
+    transition:all .2s linear;
+}
+
+
+/* Padded Table */
+.padd_table
+{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #EFEEF4;
+}
+.padd_table .header
+{
+    background-color: rgba(100,100,250,.7);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.padd_table .option a{
+    text-decoration: none;
+    color: #528ecc;
+}
+
+.padd_table .option:hover
+{
+    background-color: rgba(255 ,255,255,.7);
+    cursor: pointer;
+}
+
+.padd_table td
+{
+    padding: .5em 1em;
+    /*border: #222222 solid 1px;
+    border-radius: 3px;*/
+}
+.proj_nav
+{
+
+}
+.proj_nav a, .button
+{
+    -moz-box-shadow:inset 0px 1px 0px 0px #fbebdc;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fbebdc;
+	box-shadow:inset 0px 1px 0px 0px #fbebdc;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fadcbd), color-stop(1, #eab580) );
+	background:-moz-linear-gradient( center top, #bddbfa 5%, #80b5ea 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddbfa', endColorstr='#80b5ea');
+	background-color:#fadcbd;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #f3bc84;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:20px;
+	line-height:20px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #cc9052;
+    padding: 3px;
+    min-width: 20px;
+}
+.proj_nav a:hover
+{
+   border: solid 1px black;
+}
+
+/* PROFILE CSS */
+#profile_main_pic
+{
+    height: 200px;
+    width: 200px;
+}
+
+/*Float All Right */
+.flt_right
+{
+    float: right;
+}

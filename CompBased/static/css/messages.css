@@ -1,0 +1,62 @@
+td,table
+{
+
+    border-collapse: collapse;
+    padding:2px;
+    color:#528ecc;
+    padding:10px;
+}
+table{
+    margin-top: 10px;
+    background-color:white;
+    margin-left:auto;
+    margin-right: auto;
+    width:100%;
+}
+thead.msg_head
+{
+    color:white;
+    text-shadow: 0 -1px 2px black;
+    /*background-color: deepskyblue;*/
+    background-color: rgba(100,100,250,.7);
+}
+.msg_row
+{
+    background-color: #EFEEF4;
+}
+.msg_row:hover
+{
+    background-color: white;
+}
+
+.subject
+{
+    font-weight: bold;
+}
+.unread, .unread:hover
+{
+    background-color:burlywood;
+}
+th{
+    border-right: solid 1px white;
+}
+.message_content
+{
+    padding: 20px;
+    background-color: #FFF;
+    opacity: 1;
+    border: inset 2px #84bbf3;
+    font-weight: bold;
+}
+h2,h3
+{
+    border-bottom: dotted 1px black;
+}
+label[for = '']
+{
+
+}
+textarea
+{
+    width: 100%;
+}

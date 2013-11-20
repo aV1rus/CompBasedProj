@@ -1,27 +1,26 @@
 from django.conf.urls import patterns, include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
 from django.conf.urls.static import static
+
+
+
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
-
+# from django.contrib import admin
+# admin.autodiscover()
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'CompBased.views.home', name='home'),
-    # url(r'^CompBased/', include('CompBased.foo.urls')),
-
-    url(r'^$', 'Login.views.home'),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^signup-email/', 'Login.views.signup_email'),
-    url(r'^email-sent/', 'Login.views.validation_sent'),
-    url(r'^login/$', 'Login.views.home'),
-    url(r'^done/$', 'Login.views.done', name='done'),
-    url(r'^email/$', 'Login.views.require_email', name='require_email'),
+    url(r'^$', 'login.views.connect'),
+    # url(r'^admin/', include(admin.site.urls)),
+    # url(r'^signup-email/', 'login.views.signup_email'),
+    # url(r'^email-sent/', 'login.views.validation_sent'),
+    url(r'^login/$', 'login.views.connect'),
+    # url(r'^email/$', 'login.views.require_email', name='require_email'),
     url(r'', include('social.apps.django_app.urls', namespace='social')),
-    url(r'^home/', include('Home.urls'))
+    url(r'^home/', include('home.urls')),
+    url(r'^register/', "login.views.register"),
+    url(r'^logout/', "login.views.disconnect"),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    #url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-    # Uncomment the next line to enable the admin:
-    #url(r'^admin/', include(admin.site.urls)),
-)
+
+urlpatterns += staticfiles_urlpatterns() #Used only in debug mode

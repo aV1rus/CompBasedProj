@@ -4,6 +4,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-
+urlpatterns = patterns('home.views',
+   url(r'^$', 'home'),
 )
